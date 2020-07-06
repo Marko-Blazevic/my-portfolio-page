@@ -7,29 +7,32 @@
 }
 
 html {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: bold;
   box-sizing: border-box;
 }
 
 body {
   width: 100%;
-  margin: 0 auto;
+  overflow-x: hidden;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
 }
 
-header {
+#my-header {
   background-color: rgb(0, 0, 0);
   width: 100%;
   padding: 2rem 10%;
   position: fixed;
   font-family: 'Poiret One', cursive;
-  transition: all 2s ease;
+  -moz-animation: slideInFromLeft 4s ease-in-out;
+  -o-animation: slideInFromLeft 4s ease-in-out;
+  -webkit-animation: slideInFromLeft 4s ease-in-out;
+  animation: slideInFromLeft 4s ease-in-out;
 }
 
 #welcome {
   background: url(images/background21.jpg) no-repeat center;
   background-attachment: fixed;
-  height: 150vh;
+  height: 100vh;
 }
 
 #about {
@@ -41,14 +44,15 @@ header {
 
 #work {
   height: 100vh;
-  background: url(images/background-contact1.jpg) center;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 #contact {
   background: rgb(247, 244, 244);
   padding: 5rem 0;
+  background: url(images/background-contact-3.jpg) center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
 }
 
 .logo-name {
@@ -67,39 +71,41 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all 1s;
-}
-
-.welcome-scroll {
-  opacity: 0;
 }
 
 .welcome-box {
   width: 80%;
   color: white;
-  transition: 5s ease;
   position: fixed;
 }
 
 .welcome-para {
-  width: 100%;
   font-family: 'Poiret One', cursive;
   font-size: 13rem;
   font-weight: 500;
   background-color: rgba(0, 0, 0, 0.6);
   border: solid 1px rgba(255, 196, 0, 0.767);
   text-align: center;
+  -moz-animation: slideInFromRight 2s ease-in-out;
+  -o-animation: slideInFromRight 2s ease-in-out;
+  -webkit-animation: slideInFromRight 2s ease-in-out;
+  animation: slideInFromRight 2s ease-in-out;
 }
 
 .quote-para {
-  width: 100%;
   font-family: 'Poiret One', cursive;
   padding: 0.5rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: normal;
+  width: fit-content;
+  margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.6);
   font-style: italic;
   text-align: center;
+  -moz-animation: slideInFromTop 3s ease-in-out;
+  -o-animation: slideInFromTop 3s ease-in-out;
+  -webkit-animation: slideInFromTop 3s ease-in-out;
+  animation: slideInFromTop 3s ease-in-out;
 }
 
 .scroll {
@@ -107,16 +113,14 @@ header {
   font-weight: normal;
   color: white;
   border: none;
-  border-radius: 2rem;
-  padding: 0.5rem 1rem;
-  background-color: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 5px white;
-  margin-top: 25rem;
+  margin-top: -50rem;
   position: fixed;
-}
 
-.scroll-on {
-  box-shadow: 0 0 20px white;
+  animation-name: slideInFromTop, blinkingText;
+  animation-duration: 3s, 5s;
+  animation-delay: 3.5s, 4s;
+  animation-timing-function: ease, linear;
+  animation-iteration-count: 1, infinite;
 }
 
 .about-img {
@@ -132,63 +136,119 @@ header {
 }
 
 .work-container {
-  height: 80%;
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  grid-column-gap: 6rem;
-  grid-row-gap: 6rem;
-  margin: 5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  /* padding: 5rem 0; */
+  margin: 5rem 0;
+  height: 100%;
+}
+
+.work-left {
+  background: rgba(255, 166, 0, 0.356);
+  /* background: rgb(247, 244, 244); */
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  order: 1;
+  justify-content: space-evenly;
+}
+
+.work-right {
+  height: 100%;
+  width: 40%;
+  background-color: rgba(138, 90, 0, 0.26);
+  display: flex;
+  flex-direction: column;
+  order: 3;
+  justify-content: space-evenly;
+}
+
+.work-h2 {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  order: 2;
 }
 
 .work-box {
   background-color: rgba(0, 0, 0, 0.37);
   transition: 0.5s ease-in-out;
-  border-radius: 2rem;
+  height: 40%;
 }
 
-.work-box:hover {
-  transform: scale(1.05);
+.work-box-left {
+  transform: translateX(-90%);
+  border-radius: 0 2rem 2rem 0;
+}
+
+.work-box-right {
+  transform: translateX(90%);
+  border-radius: 2rem 0 0 2rem;
+}
+
+.work-box-left:hover {
+  transform: translateX(-5%);
   background-color: rgba(0, 0, 0, 0.596);
   box-shadow: 1px 1px 20px rgba(109, 104, 92, 0.5);
+}
+
+.work-box-right:hover {
+  transform: translateX(5%);
+  background-color: rgba(0, 0, 0, 0.596);
+  box-shadow: 1px 1px 20px rgba(109, 104, 92, 0.5);
+}
+
+.slide-in-from-left {
+  -moz-animation: slideInFromLeft 2s ease -1s;
+  -o-animation: slideInFromLeft 2s ease -1s;
+  -webkit-animation: slideInFromLeft 2s ease -1s;
+  animation: slideInFromLeft 2s ease -1s;
 }
 
 .contact-container {
   display: flex;
   justify-content: center;
-  align-self: center;
+  transform: scale(0);
+  transition: 1.5s ease-in-out;
 }
 
 .contact-1 {
+  display: flex;
   width: 50vh;
-  background-color: rgba(185, 120, 0, 0.123);
   border-radius: 2rem 0 0 2rem;
   border-left: 1.5rem solid orange;
-  padding: 6rem 2rem;
-  font-size: 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+.contact-text {
+  width: 50%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: normal;
 }
 
 .contact-2 {
   border-radius: 0 2rem 2rem 0;
   padding: 3rem 2rem;
-  border-right: 1rem solid orange;
+  border-right: 0.8rem solid orange;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 h2 {
-  color: white;
   font-size: 2.5rem;
-  padding-top: 2rem;
   text-align: center;
-  font-family: 'Poiret One', cursive;
+  /* font-family: 'Poiret One', cursive; */
 }
 
 h3 {
-  color: black;
-  text-shadow: 1px 1px gray;
-  font-family: 'Poiret One', cursive;
+  color: white;
+  text-shadow: 1px 1px black;
+  /* font-family: 'Poiret One', cursive; */
   font-size: 2.5rem;
 }
 
@@ -200,7 +260,7 @@ label {
 input {
   width: 30rem;
   height: 2rem;
-  padding: 1.3rem 1rem;
+  padding: 0 1rem;
   border: solid 1px orange;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
@@ -214,7 +274,7 @@ input {
 textarea {
   width: 30rem;
   height: 10rem;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
   border: solid 1px orange;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
@@ -245,6 +305,138 @@ button:hover {
   background-color: orange;
   color: black;
   box-shadow: none;
-  width: 70%;
+  width: 80%;
   align-self: center;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.548);
+}
+
+@-o-keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-o-keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-o-keyframes slideInFromTop {
+  0% {
+    transform: translateY(-70rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-moz-keyframes slideInFromTop {
+  0% {
+    transform: translateY(-70rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideInFromTop {
+  0% {
+    transform: translateY(-70rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-70rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes blinkingText {
+  0% {
+    color: rgb(255, 255, 255);
+    margin-top: 25rem;
+  }
+  25% {
+    color: rgba(255, 255, 255, 0.24);
+    margin-top: 27rem;
+  }
+  50% {
+    color: rgb(255, 255, 255);
+    margin-top: 29rem;
+  }
+  75% {
+    color: rgba(255, 255, 255, 0.24);
+    margin-top: 27rem;
+  }
+  100% {
+    color: white;
+    margin-top: 25rem;
+  }
 }

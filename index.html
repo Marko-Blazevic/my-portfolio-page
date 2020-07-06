@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marko Blazevic</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
 
-  <header>
+  <header id="my-header">
     <p class="logo-name"><span class="first-letter">M</span>arko <span class="first-letter">B</span>lazevic</p>
   </header>
   <div id="welcome">
@@ -20,55 +20,64 @@
         <p class="welcome-para">WELCOME</p>
         <p class="quote-para">"Creativity is inteligence having fun" - Albert Einstein</p>
       </div>
-      <p class="scroll">scroll &#129123;</p>
-    </div>
-  </div>
 
-  <div id="about">
-    <img src="images/my-image.jpg" alt="portrait-image" class="about-img">
-    <div class="about-box">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique doloribus dolore incidunt explicabo magni
-        magnam eaque accusantium fuga deleniti. Assumenda voluptas facilis velit nihil dicta deleniti sunt dolores alias
-        aperiam?</p>
-    </div>
-  </div>
+      <p class="scroll">&#x2B9F;</p>
 
-  <div id="work">
-    <h2>Some of my Work</h2>
-    <div class="work-container">
-      <div class="work-box">
-        <img src="" alt="">
-      </div>
-      <div class="work-box">
-        <img src="" alt="">
-      </div>
-      <div class="work-box">
-        <img src="" alt="">
-      </div>
-      <div class="work-box">
-        <img src="" alt="">
+    </div>
+
+    <div id="about">
+      <img src="images/my-image.jpg" alt="portrait-image" class="about-img">
+      <div class="about-box">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique doloribus dolore incidunt explicabo magni
+          magnam eaque accusantium fuga deleniti. Assumenda voluptas facilis velit nihil dicta deleniti sunt dolores
+          alias
+          aperiam?</p>
       </div>
     </div>
-  </div>
 
-  <div id="contact">
-    <div class="contact-container">
-      <div class="contact-1">
-        <h3>Contact Me</h3><br>
-        <p>If you are interested in a business cooperation, feel free to contact me!</p>
-      </div>
+    <div id="work">
+      <div class="work-container">
 
-      <div class="contact-2">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name">
-        <label for="email">Your email:</label>
-        <input type="email" id="email" name="email">
-        <label for="message">Your Message:</label>
-        <textarea id="messsage" name="message"></textarea>
-        <button>Send</button>
+        <h2 class="work-h2">Some of my Work</h2>
+
+        <div class="work-left">
+          <div class="work-box-left work-box">
+            <img src="" alt="">
+          </div>
+          <div class="work-box-left work-box">
+            <img src="" alt="">
+          </div>
+        </div>
+
+        <div class="work-right">
+          <div class="work-box-right work-box">
+            <img src="" alt="">
+          </div>
+          <div class="work-box-right work-box">
+            <img src="" alt="">
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
+
+    <div id="contact">
+      <div class="contact-container">
+        <div class="contact-1">
+          <p class="contact-text">Send me a message if you want to make creative stuff!</p>
+        </div>
+
+        <div class="contact-2">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name">
+          <label for="email">Your email:</label>
+          <input type="email" id="email" name="email">
+          <label for="message">Your Message:</label>
+          <textarea id="messsage" name="message"></textarea>
+          <button>Send</button>
+        </div>
+      </div>
+    </div>
 
 </body>
 
