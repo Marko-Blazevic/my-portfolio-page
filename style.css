@@ -4,10 +4,11 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-html {
-  box-sizing: border-box;
+:root {
+  --golden: rgb(255, 196, 0);
 }
 
 body {
@@ -17,108 +18,149 @@ body {
   font-weight: bold;
 }
 
+#welcome {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #my-header {
-  background-color: rgb(0, 0, 0);
   width: 100%;
   padding: 2rem 10%;
   position: fixed;
   font-family: 'Poiret One', cursive;
-  -moz-animation: slideInFromLeft 4s ease-in-out;
-  -o-animation: slideInFromLeft 4s ease-in-out;
-  -webkit-animation: slideInFromLeft 4s ease-in-out;
-  animation: slideInFromLeft 4s ease-in-out;
-}
-
-#welcome {
-  background: url(images/background21.jpg) no-repeat center;
-  background-attachment: fixed;
-  height: 100vh;
+  -moz-animation: slideInFromLeft 3s ease-in-out;
+  -o-animation: slideInFromLeft 3s ease-in-out;
+  -webkit-animation: slideInFromLeft 3s ease-in-out;
+  animation: slideInFromLeft 3s ease-in-out;
+  transition: background-color ease 5s;
 }
 
 #about {
   display: flex;
   align-items: center;
   width: 100%;
-  background: rgb(247, 244, 244);
+  background: whitesmoke;
 }
 
 #work {
   height: 100vh;
+  background-color: whitesmoke;
 }
 
 #contact {
-  background: rgb(247, 244, 244);
+  background: whitesmoke;
   padding: 5rem 0;
-  background: url(images/background-contact-3.jpg) center;
   background-size: cover;
-  background-attachment: fixed;
-  color: white;
 }
 
 .logo-name {
   font-size: 1.5rem;
-  color: white;
 }
 
 .first-letter {
-  color: rgb(255, 196, 0);
+  color: var(--golden);
   font-size: 2.5rem;
 }
 
-.welcome-start {
+.header-white {
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+.header-black {
+  z-index: 999;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.background-img {
+  z-index: -1;
+  width: 100%;
   height: 100vh;
+  position: fixed;
+  opacity: 0;
+}
+
+.img-opacity {
+  animation: opacity 6s ease;
+  animation-fill-mode: forwards;
+}
+
+.welcome-container {
+  width: 70%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  color: black;
+  letter-spacing: 0.5rem;
+  transition: all 3s ease;
 }
 
-.welcome-box {
+.welcome-container-after {
   width: 80%;
   color: white;
-  position: fixed;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 5px var(--golden);
 }
 
-.welcome-para {
+.letter {
+  opacity: 0;
   font-family: 'Poiret One', cursive;
-  font-size: 13rem;
+  font-size: 15rem;
   font-weight: 500;
-  background-color: rgba(0, 0, 0, 0.6);
-  border: solid 1px rgba(255, 196, 0, 0.767);
-  text-align: center;
-  -moz-animation: slideInFromRight 2s ease-in-out;
-  -o-animation: slideInFromRight 2s ease-in-out;
-  -webkit-animation: slideInFromRight 2s ease-in-out;
-  animation: slideInFromRight 2s ease-in-out;
+  text-shadow: 1px 1px 3px black;
+
+  /* -moz-animation: slideInFromRight 2s ease-out;
+  -o-animation: slideInFromRight 2s ease-out;
+  -webkit-animation: slideInFromRight 2s ease-out; */
+  animation: slideInFromRight 1.5s ease-out;
+  animation-fill-mode: forwards;
+  /* animation-name: slideInFromRight, scale;
+  animation-duration: 2s, 0.5s;
+  animation-delay: 0, 4s;
+  animation-timing-function: ease-out, ease; */
 }
 
-.quote-para {
-  font-family: 'Poiret One', cursive;
-  padding: 0.5rem;
-  font-size: 1.8rem;
-  font-weight: normal;
-  width: fit-content;
-  margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.6);
-  font-style: italic;
-  text-align: center;
-  -moz-animation: slideInFromTop 3s ease-in-out;
-  -o-animation: slideInFromTop 3s ease-in-out;
-  -webkit-animation: slideInFromTop 3s ease-in-out;
-  animation: slideInFromTop 3s ease-in-out;
+.little-popup {
+  animation: littlePopUp 1s linear;
+  animation-fill-mode: both;
+}
+
+.letter:nth-child(1) {
+  animation-delay: 0s;
+}
+.letter:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.letter:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.letter:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.letter:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.letter:nth-child(6) {
+  animation-delay: 1s;
+}
+.letter:nth-child(7) {
+  animation-delay: 1.2s;
 }
 
 .scroll {
   font-size: 1rem;
   font-weight: normal;
-  color: white;
   border: none;
-  margin-top: -50rem;
+  margin-top: -70rem;
   position: fixed;
-
   animation-name: slideInFromTop, blinkingText;
-  animation-duration: 3s, 5s;
-  animation-delay: 3.5s, 4s;
+  animation-duration: 3s, 4s;
+  animation-delay: 5s, 5s;
   animation-timing-function: ease, linear;
   animation-iteration-count: 1, infinite;
 }
@@ -128,6 +170,7 @@ body {
   width: 30rem;
   margin: 5rem;
   align-self: flex-start;
+  box-shadow: 0 0 5px black;
 }
 
 .about-box {
@@ -139,15 +182,11 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  /* padding: 5rem 0; */
-  margin: 5rem 0;
   height: 100%;
 }
 
 .work-left {
   background: rgba(255, 166, 0, 0.356);
-  /* background: rgb(247, 244, 244); */
-  height: 100%;
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -156,19 +195,12 @@ body {
 }
 
 .work-right {
-  height: 100%;
   width: 40%;
   background-color: rgba(138, 90, 0, 0.26);
   display: flex;
   flex-direction: column;
   order: 3;
   justify-content: space-evenly;
-}
-
-.work-h2 {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  order: 2;
 }
 
 .work-box {
@@ -209,6 +241,8 @@ body {
 .contact-container {
   display: flex;
   justify-content: center;
+  color: black;
+  text-shadow: 1px 1px 3px gray;
   transform: scale(0);
   transition: 1.5s ease-in-out;
 }
@@ -218,10 +252,11 @@ body {
   width: 50vh;
   border-radius: 2rem 0 0 2rem;
   border-left: 1.5rem solid orange;
-  background: rgba(0, 0, 0, 0.6);
+  /* background: rgba(0, 0, 0, 0.7); */
   justify-content: center;
   align-items: center;
 }
+
 .contact-text {
   width: 50%;
   text-align: center;
@@ -236,20 +271,26 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.6);
+  /* background: rgba(0, 0, 0, 0.7); */
 }
 
-h2 {
+h1 {
   font-size: 2.5rem;
   text-align: center;
+  text-shadow: 1px 1px 3px rgb(150, 150, 150);
   /* font-family: 'Poiret One', cursive; */
 }
 
-h3 {
-  color: white;
-  text-shadow: 1px 1px black;
-  /* font-family: 'Poiret One', cursive; */
-  font-size: 2.5rem;
+h1.work {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  order: 2;
+}
+
+h1.about {
+  transform: rotate(-45deg) translateY(3rem) translateX(-2rem);
+  align-self: flex-start;
+  font-family: 'Poiret One', cursive;
 }
 
 label {
@@ -339,7 +380,7 @@ button:hover {
 
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-55%);
   }
   100% {
     transform: translateX(0);
@@ -348,7 +389,7 @@ button:hover {
 
 @-o-keyframes slideInFromRight {
   0% {
-    transform: translateX(100%);
+    transform: translateX(1000%);
   }
   100% {
     transform: translateX(0);
@@ -357,7 +398,7 @@ button:hover {
 
 @-moz-keyframes slideInFromRight {
   0% {
-    transform: translateX(100%);
+    transform: translateX(1000%);
   }
   100% {
     transform: translateX(0);
@@ -366,7 +407,7 @@ button:hover {
 
 @-webkit-keyframes slideInFromRight {
   0% {
-    transform: translateX(100%);
+    transform: translateX(1000%);
   }
   100% {
     transform: translateX(0);
@@ -375,10 +416,24 @@ button:hover {
 
 @keyframes slideInFromRight {
   0% {
-    transform: translateX(100%);
+    transform: translateX(1000px);
   }
   100% {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  /*................menjaj..................*/
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -421,22 +476,54 @@ button:hover {
 @keyframes blinkingText {
   0% {
     color: rgb(255, 255, 255);
-    margin-top: 25rem;
+    margin-top: 42rem;
   }
   25% {
     color: rgba(255, 255, 255, 0.24);
-    margin-top: 27rem;
+    margin-top: 38rem;
   }
   50% {
     color: rgb(255, 255, 255);
-    margin-top: 29rem;
+    margin-top: 34rem;
   }
   75% {
     color: rgba(255, 255, 255, 0.24);
-    margin-top: 27rem;
+    margin-top: 38rem;
   }
   100% {
     color: white;
-    margin-top: 25rem;
+    margin-top: 42rem;
+  }
+}
+
+@keyframes littlePopUp {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
