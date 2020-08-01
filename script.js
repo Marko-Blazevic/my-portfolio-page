@@ -24,10 +24,9 @@ window.addEventListener('scroll', () => {
   welcomeContainer.style.opacity = Math.max(0, 1 - x / 600);
 
   if (x > 800) {
-    header.style.transition = '.1s';
-    header.style.opacity = 0;
+    header.classList.add('header-display');
   } else {
-    header.style.opacity = 1;
+    header.classList.remove('header-display');
   }
 
   const contactBox = document.querySelector('.contact-container');
