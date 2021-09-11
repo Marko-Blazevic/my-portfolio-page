@@ -10,9 +10,9 @@ welcomeContainer.children[6].addEventListener('animationend', () => {
     letter.classList.add('little-popup');
   }
   welcomeContainer.classList.add('box-shadow');
-  header.classList.add('header-black');
   welcomeContainer.classList.add('welcome-container-after');
   backgroundImage.classList.add('img-opacity');
+  header.classList.add('header-black');
 });
 
 window.addEventListener('scroll', () => {
@@ -29,8 +29,8 @@ window.addEventListener('scroll', () => {
     header.classList.remove('header-display');
   }
 
-  const contactBox = document.querySelector('.contact-container');
-  if (x > 1600) {
-    contactBox.style.transform = 'scale(1)';
-  }
+  // const contactBox = document.querySelector('.contact-container');
+  // if (x > 1600) {
+  //   contactBox.style.transform = 'scale(1)';
+  // }
 });
