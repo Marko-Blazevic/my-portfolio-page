@@ -17,7 +17,7 @@ welcomeContainer.children[6].addEventListener('animationend', () => {
 
 window.addEventListener('scroll', () => {
   const x = window.scrollY;
-  console.log(x);
+
   welcomeContainer.style.transition = 'none';
 
   scrollEl.style.opacity = Math.max(0, 1 - x / 100);
@@ -28,9 +28,4 @@ window.addEventListener('scroll', () => {
   } else {
     header.classList.remove('header-display');
   }
-
-  // const contactBox = document.querySelector('.contact-container');
-  // if (x > 1600) {
-  //   contactBox.style.transform = 'scale(1)';
-  // }
 });
