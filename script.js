@@ -1,5 +1,6 @@
 const header = document.getElementById('my-header');
 const welcome = document.getElementById('welcome');
+const about = document.getElementById('about');
 const scrollEl = document.querySelector('.scroll');
 const welcomeContainer = document.querySelector('.welcome-container');
 const backgroundImage = document.querySelector('.background-img');
@@ -14,11 +15,21 @@ welcomeContainer.children[6].addEventListener('animationend', () => {
     welcomeContainer.classList.add('welcome-container-after');
     backgroundImage.classList.add('img-opacity');
     header.classList.add('header-black');
-  }, 500);
+  }, 100);
 });
 
+const rollElement = () => {
+  letter.classList.add('little-popup');
+};
+const elementToNormal = () => {
+  letter.classList.remove('little-popup');
+};
+
+const x = window.scrollY;
+aboutRect = about.getBoundingClientRect();
+// if (aboutRect.top < (7.5rem))
+
 window.addEventListener('scroll', () => {
-  const x = window.scrollY;
   header.classList.add('header-smaller');
   welcomeContainer.style.transition = 'none';
 

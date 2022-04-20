@@ -100,11 +100,15 @@ body {
           flex: 1;
 }
 
-.header-display {
+.header-hide {
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
   -webkit-animation: none;
           animation: none;
+}
+
+.header-smaller {
+  padding: 1rem 0;
 }
 
 .logo-name {
