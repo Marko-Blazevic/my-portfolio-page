@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap');
 
 * {
   margin: 0;
@@ -30,18 +30,20 @@ body {
 }
 
 #welcome {
+  // margin-top: 1rem;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 
 #about {
-  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: white;
+  padding: 2rem;
 }
 
 #work {
@@ -66,13 +68,11 @@ body {
 }
 
 .main-content {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-}
-
-.content {
-  flex: 1;
 }
 
 .header-hide {
@@ -89,7 +89,7 @@ body {
   text-align: center;
 }
 
-.first-letter {
+.letter-style {
   color: $golden;
   font-size: 3rem;
   text-shadow: 2px 2px 4px black;
@@ -187,10 +187,6 @@ body {
   animation-fill-mode: forwards;
 }
 
-.about-box {
-  font-family: $text-font;
-}
-
 .underline {
   border-bottom: $golden 3px solid;
   border-radius: 50%;
@@ -210,6 +206,12 @@ body {
   -o-animation: slideInFromLeft 2s ease -1s;
   -webkit-animation: slideInFromLeft 2s ease -1s;
   animation: slideInFromLeft 2s ease -1s;
+}
+
+.about-paragraph {
+  font-family: $text-font;
+  font-weight: 300;
+  font-size: 1.5rem;
 }
 
 .contact-container {
