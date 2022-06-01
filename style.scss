@@ -59,6 +59,7 @@ body {
   padding: 1.5rem 0;
   font-family: $emphasize-font;
   opacity: 0;
+  transform: translateY(100%);
   // animation: opacity 6s ease;
   // animation-fill-mode: forwards;
   // transition: background-color 5s ease, transform 0.2s ease-out;
@@ -91,9 +92,9 @@ body {
 }
 
 .header-black {
-  // z-index: 1;
   background-color: rgb(0, 0, 0);
   color: white;
+  transition: all 2s ease-in-out;
 }
 
 .welcome-background-img {
@@ -129,11 +130,10 @@ body {
   transition: all ease-in-out 1.5s;
 }
 
-// .letter {
-//   opacity: 0;
-//   animation: slideInFromRight 1.5s ease-out;
-//   animation-fill-mode: forwards;
-// }
+.letter {
+  opacity: 0;
+  transform: translateX(100%);
+}
 
 // .little-popup {
 //   animation: littlePopUp 1s linear;
@@ -245,9 +245,10 @@ body {
   margin: 0 auto;
   letter-spacing: 1rem;
   animation: typing 5s steps(1000, end);
-  padding-top: 6rem;
+  // padding-top: 6rem;
 
   h1 {
+    padding: 1rem;
     font-family: $emphasize-font;
     font-size: 2.5rem;
     text-align: center;

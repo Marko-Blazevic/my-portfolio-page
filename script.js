@@ -1,4 +1,4 @@
-// const header = document.getElementsByClassName('my-header');
+const header = document.querySelector('.my-header');
 // const welcome = document.getElementById('welcome');
 // const about = document.getElementById('about');
 // const scrollEl = document.querySelector('.scroll');
@@ -45,14 +45,19 @@ const welcomeContainer = document.querySelector('.letter-container');
 //   }
 // });
 
-gsap.from('.letter-w', { duration: 1.5, x: '100%', opacity: 0 });
-gsap.from('.letter-e1', { duration: 1.5, x: '100%', opacity: 0, delay: 0.2 });
-gsap.from('.letter-l', { duration: 1.5, x: '100%', opacity: 0, delay: 0.4 });
-gsap.from('.letter-c', { duration: 1.5, x: '100%', opacity: 0, delay: 0.6 });
-gsap.from('.letter-o', { duration: 1.5, x: '100%', opacity: 0, delay: 0.8 });
-gsap.from('.letter-m', { duration: 1.5, x: '100%', opacity: 0, delay: 1 });
-gsap.from('.letter-e2', { duration: 1.5, x: '100%', opacity: 0, delay: 1.2 });
-gsap.to('.welcome-background-img', { duration: 2, opacity: 1, delay: 2 });
+gsap.to('.letter-w', { duration: 1.5, x: '0', opacity: 1 });
+gsap.to('.letter-e1', { duration: 1.5, x: '0', opacity: 1, delay: 0.2 });
+gsap.to('.letter-l', { duration: 1.5, x: '0', opacity: 1, delay: 0.4 });
+gsap.to('.letter-c', { duration: 1.5, x: '0', opacity: 1, delay: 0.6 });
+gsap.to('.letter-o', { duration: 1.5, x: '0', opacity: 1, delay: 0.8 });
+gsap.to('.letter-m', { duration: 1.5, x: '0', opacity: 1, delay: 1 });
+gsap.to('.letter-e2', { duration: 1.5, x: '0', opacity: 1, delay: 1.2 });
+gsap.to('.welcome-background-img', {
+  duration: 2,
+  opacity: 1,
+  delay: 2,
+  ease: 'none',
+});
 gsap.to('.letter-w', { color: 'white', delay: 2 });
 gsap.to('.letter-e1', { color: 'white', delay: 2.2 });
 gsap.to('.letter-l', { color: 'white', delay: 2.4 });
@@ -63,4 +68,7 @@ gsap.to('.letter-e2', { color: 'white', delay: 3.2 });
 
 setTimeout(() => {
   welcomeContainer.classList.add('letter-container-after');
+  header.classList.add('header-black');
 }, 3000);
+
+gsap.to('.my-header', { duration: 2, ease: 'bounce.out', y: 0, opacity: 1 });
