@@ -12,37 +12,24 @@ $text-font: 'Quicksand', sans-serif;
 $emphasize-font: 'Poiret One', cursive;
 
 body {
-  height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-#my-header {
-  width: 100%;
-  padding: 2rem 0;
-  position: fixed;
-  font-family: $emphasize-font;
-  opacity: 0;
-  animation: opacity 6s ease;
-  animation-fill-mode: forwards;
-  transition: background-color 5s ease, transform 0.2s ease-out;
-  font-weight: bold;
+  overflow-x: hidden;
 }
 
 #welcome {
-  // margin-top: 1rem;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 2rem;
 }
 
 #about {
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: white;
+
+  background-color: black;
+  color: white;
   padding: 2rem;
 }
 
@@ -67,22 +54,33 @@ body {
   padding: 1rem 0;
 }
 
-.main-content {
-  height: 100vh;
-  width: 100vw;
+.my-header {
+  width: 100%;
+  padding: 1.5rem 0;
+  font-family: $emphasize-font;
+  opacity: 0;
+  animation: opacity 6s ease;
+  animation-fill-mode: forwards;
+  transition: background-color 5s ease, transform 0.2s ease-out;
+  font-weight: bold;
+}
+
+.welcome-wrapper {
   display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 100vh;
 }
 
-.header-hide {
-  transform: translateY(-100%);
-  animation: none;
-}
+// .header-hide {
+//   transform: translateY(-100%);
+//   animation: none;
+// }
 
-.header-smaller {
-  padding: 1rem 0;
-}
+// .header-smaller {
+//   padding: 1rem 0;
+// }
 
 .logo-name {
   font-size: 1.5rem;
@@ -102,15 +100,20 @@ body {
 }
 
 .header-black {
-  z-index: 1;
+  // z-index: 1;
   background-color: rgb(0, 0, 0);
   color: white;
 }
 
-.background-img {
+.welcome-background-img {
+  background-repeat: no-repeat;
   z-index: -1;
   position: fixed;
   opacity: 0;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .img-opacity {
@@ -118,12 +121,11 @@ body {
   animation-fill-mode: forwards;
 }
 
-.welcome-container {
+.letter-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  color: black;
   letter-spacing: 0.5rem;
   transition: all 3s ease;
   font-family: $emphasize-font;
@@ -132,11 +134,11 @@ body {
   text-shadow: 1px 1px 3px black;
 }
 
-.welcome-container-after {
-  width: 80%;
+.letter-container-after {
+  width: 100%;
+  padding: 2rem 5rem;
   color: white;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.85);
   box-shadow: 0 0 5px $golden;
 }
 
@@ -209,9 +211,12 @@ body {
 }
 
 .about-paragraph {
+  padding: 3rem;
   font-family: $text-font;
   font-weight: 300;
   font-size: 1.5rem;
+  border-right: solid 1px $golden;
+  border-bottom: solid 1px $golden;
 }
 
 .contact-container {
@@ -245,21 +250,22 @@ body {
   flex-basis: 40%;
 }
 
-h1 {
-  font-family: $emphasize-font;
-  font-size: 2.5rem;
-  text-align: center;
-  text-shadow: 1px 1px 3px rgb(150, 150, 150);
-}
-
-.typewriter h1 {
+.typewriter {
+  position: relative;
   overflow: hidden;
-  border-right: 0.1em solid $golden;
+  border-right: 1px solid $golden;
   white-space: nowrap;
   margin: 0 auto;
-  letter-spacing: 1em;
+  letter-spacing: 1rem;
   animation: typing 5s steps(1000, end);
   padding-top: 6rem;
+
+  h1 {
+    font-family: $emphasize-font;
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgb(150, 150, 150);
+  }
 }
 
 @keyframes typing {
@@ -516,7 +522,7 @@ button {
   #welcome {
     height: 80vh;
   }
-  .welcome-container {
+  .letter-container {
     flex-direction: column;
     font-size: 8vh;
     width: auto;
@@ -541,213 +547,219 @@ button {
   }
 }
 
-.work-container {
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f6f6f6;
-  position: relative;
-
-  .box {
-    width: 0%;
-    height: 620px;
-    background: #fff;
-    position: absolute;
-    animation: openBox 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-
-    .product__img {
-      width: 600px;
-      position: absolute;
-      left: -150px;
-      top: 50px;
-      opacity: 0;
-      animation: fadeImg 1s ease-in-out forwards;
-      animation-delay: 1s;
-    }
-
-    .product__video {
-      width: 320px;
-      height: 100px;
-      position: absolute;
-      left: 50px;
-      bottom: 50px;
-
-      .video {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        bottom: 0px;
-        opacity: 0;
-        animation: upVideo 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-        animation-delay: 1.2s;
-
-        i {
-          width: 70px;
-          height: 70px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          font-size: 1rem;
-          color: $golden;
-          border: 2px solid $golden;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          border-radius: 50%;
-          transition: ease-in-out 220ms;
-          cursor: pointer;
-
-          &:hover {
-            background: $golden;
-            color: #fff;
-            box-shadow: 0 0 26px $golden;
-          }
-        }
-        p {
-          margin-left: 25px;
-          font-family: $text-font;
-        }
-      }
-    }
-
-    .product__disc {
-      width: 0px;
-      height: 430px;
-      background: $golden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      left: 0px;
-      top: 50px;
-      animation: showDisc 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-
-      .product__disc--content {
-        width: 80%;
-        height: 80%;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        animation: fadeContent 1s ease-in-out forwards;
-        animation-delay: 1s;
-        opacity: 0;
-
-        .disc__content--about {
-          width: 100%;
-
-          h2 {
-            font-size: 2rem;
-            font-family: $text-font;
-          }
-          span {
-            font-family: $text-font;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            display: flex;
-            opacity: 0.5;
-          }
-          p {
-            margin-top: 35px;
-            font-size: 1rem;
-            font-family: $text-font;
-          }
-        }
-
-        .product__view--more {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          position: relative;
-          cursor: pointer;
-
-          &:hover {
-            .view__more--block {
-              width: 220px;
-              height: 35px;
-            }
-          }
-
-          .view__more--block {
-            width: 10px;
-            height: 15px;
-            position: absolute;
-            background: #f6f6f6;
-            z-index: 1;
-            transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
-          }
-          p {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: flex;
-            z-index: 2;
-            margin-left: 15px;
-            font-family: $text-font;
-          }
-        }
-      }
-    }
-
-    .product_buttons {
-      width: 500px;
-      height: 100px;
-      bottom: 50px;
-      right: -50px;
-      position: absolute;
-
-      .btn {
-        width: 240px;
-        height: 70%;
-        font-size: 1.2rem;
-        font-weight: bold;
-        font-family: $text-font;
-        -webkit-transition: ease-in-out 220ms;
-        -moz-transition: ease-in-out 220ms;
-        -ms-transition: ease-in-out 220ms;
-        -o-transition: ease-in-out 220ms;
-        transition: ease-in-out 220ms;
-        cursor: pointer;
-      }
-
-      .demo {
-        border: 2px solid $golden;
-        background: transparent;
-        color: $golden;
-        position: absolute;
-        bottom: -25px;
-        left: 0;
-        opacity: 0;
-        animation: fade-hover 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-        animation-delay: 1s;
-
-        &:hover {
-          background: $golden;
-          color: black;
-          box-shadow: 0 0 10px $golden;
-        }
-      }
-
-      .git {
-        border: none;
-        background: $golden;
-        color: #fff;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        opacity: 0;
-        animation: fade-hover 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-        animation-delay: 1s;
-
-        &:hover {
-          box-shadow: 0 0 10px $golden;
-          color: black;
-        }
-      }
-    }
+@media (max-width: 566px) {
+  .typewriter h1 {
+    font-size: 2rem;
   }
 }
+
+// .work-container {
+//   width: 100%;
+//   height: 90vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background: #f6f6f6;
+//   position: relative;
+
+//   .box {
+//     width: 0%;
+//     height: 620px;
+//     background: #fff;
+//     position: absolute;
+//     animation: openBox 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+
+//     .product__img {
+//       width: 600px;
+//       position: absolute;
+//       left: -150px;
+//       top: 50px;
+//       opacity: 0;
+//       animation: fadeImg 1s ease-in-out forwards;
+//       animation-delay: 1s;
+//     }
+
+//     .product__video {
+//       width: 320px;
+//       height: 100px;
+//       position: absolute;
+//       left: 50px;
+//       bottom: 50px;
+
+//       .video {
+//         display: flex;
+//         align-items: center;
+//         position: absolute;
+//         bottom: 0px;
+//         opacity: 0;
+//         animation: upVideo 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+//         animation-delay: 1.2s;
+
+//         i {
+//           width: 70px;
+//           height: 70px;
+//           display: flex;
+//           justify-content: center;
+//           align-items: center;
+//           font-size: 1rem;
+//           color: $golden;
+//           border: 2px solid $golden;
+//           -webkit-border-radius: 50%;
+//           -moz-border-radius: 50%;
+//           border-radius: 50%;
+//           transition: ease-in-out 220ms;
+//           cursor: pointer;
+
+//           &:hover {
+//             background: $golden;
+//             color: #fff;
+//             box-shadow: 0 0 26px $golden;
+//           }
+//         }
+//         p {
+//           margin-left: 25px;
+//           font-family: $text-font;
+//         }
+//       }
+//     }
+
+//     .product__disc {
+//       width: 0px;
+//       height: 430px;
+//       background: $golden;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       position: absolute;
+//       left: 0px;
+//       top: 50px;
+//       animation: showDisc 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+
+//       .product__disc--content {
+//         width: 80%;
+//         height: 80%;
+//         display: flex;
+//         justify-content: space-between;
+//         flex-direction: column;
+//         animation: fadeContent 1s ease-in-out forwards;
+//         animation-delay: 1s;
+//         opacity: 0;
+
+//         .disc__content--about {
+//           width: 100%;
+
+//           h2 {
+//             font-size: 2rem;
+//             font-family: $text-font;
+//           }
+//           span {
+//             font-family: $text-font;
+//             font-size: 1rem;
+//             letter-spacing: 2px;
+//             text-transform: uppercase;
+//             display: flex;
+//             opacity: 0.5;
+//           }
+//           p {
+//             margin-top: 35px;
+//             font-size: 1rem;
+//             font-family: $text-font;
+//           }
+//         }
+
+//         .product__view--more {
+//           width: 100%;
+//           display: flex;
+//           align-items: center;
+//           position: relative;
+//           cursor: pointer;
+
+//           &:hover {
+//             .view__more--block {
+//               width: 220px;
+//               height: 35px;
+//             }
+//           }
+
+//           .view__more--block {
+//             width: 10px;
+//             height: 15px;
+//             position: absolute;
+//             background: #f6f6f6;
+//             z-index: 1;
+//             transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+//           }
+//           p {
+//             font-size: 1rem;
+//             text-transform: uppercase;
+//             letter-spacing: 2px;
+//             display: flex;
+//             z-index: 2;
+//             margin-left: 15px;
+//             font-family: $text-font;
+//           }
+//         }
+//       }
+//     }
+
+//     .product_buttons {
+//       width: 500px;
+//       height: 100px;
+//       bottom: 50px;
+//       right: -50px;
+//       position: absolute;
+
+//       .btn {
+//         width: 240px;
+//         height: 70%;
+//         font-size: 1.2rem;
+//         font-weight: bold;
+//         font-family: $text-font;
+//         -webkit-transition: ease-in-out 220ms;
+//         -moz-transition: ease-in-out 220ms;
+//         -ms-transition: ease-in-out 220ms;
+//         -o-transition: ease-in-out 220ms;
+//         transition: ease-in-out 220ms;
+//         cursor: pointer;
+//       }
+
+//       .demo {
+//         border: 2px solid $golden;
+//         background: transparent;
+//         color: $golden;
+//         position: absolute;
+//         bottom: -25px;
+//         left: 0;
+//         opacity: 0;
+//         animation: fade-hover 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+//         animation-delay: 1s;
+
+//         &:hover {
+//           background: $golden;
+//           color: black;
+//           box-shadow: 0 0 10px $golden;
+//         }
+//       }
+
+//       .git {
+//         border: none;
+//         background: $golden;
+//         color: #fff;
+//         position: absolute;
+//         right: 0;
+//         bottom: 0;
+//         opacity: 0;
+//         animation: fade-hover 1s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+//         animation-delay: 1s;
+
+//         &:hover {
+//           box-shadow: 0 0 10px $golden;
+//           color: black;
+//         }
+//       }
+//     }
+//   }
+// }
 
 @keyframes openBox {
   0% {

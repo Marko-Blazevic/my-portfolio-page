@@ -1,9 +1,11 @@
-const header = document.getElementById('my-header');
+const header = document.getElementsByClassName('my-header');
 const welcome = document.getElementById('welcome');
 const about = document.getElementById('about');
 const scrollEl = document.querySelector('.scroll');
-const welcomeContainer = document.querySelector('.welcome-container');
-const backgroundImage = document.querySelector('.background-img');
+const welcomeContainer = document.querySelector('.letter-container');
+const welcomeBackgroundImage = document.querySelector(
+  '.welcome-background-img'
+);
 
 welcomeContainer.children[6].addEventListener('animationend', () => {
   for (i = 0; i < 7; i++) {
@@ -12,8 +14,8 @@ welcomeContainer.children[6].addEventListener('animationend', () => {
   }
   setTimeout(() => {
     welcomeContainer.classList.add('box-shadow');
-    welcomeContainer.classList.add('welcome-container-after');
-    backgroundImage.classList.add('img-opacity');
+    welcomeContainer.classList.add('letter-container-after');
+    welcomeBackgroundImage.classList.add('img-opacity');
     header.classList.add('header-black');
   }, 100);
 });

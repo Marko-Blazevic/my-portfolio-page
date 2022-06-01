@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-package/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-package/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-package/favicon-16x16.png">
@@ -11,7 +11,9 @@
   <link rel="mask-icon" href="images/favicon-package/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
+
   <title>Marko Blazevic</title>
+
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
@@ -19,30 +21,33 @@
 
 <body>
 
-  <header id="my-header" class="header-white">
-    <p class="logo-name"><span class="letter-style">M</span>arko <span class="letter-style">B</span>lazevic</p>
-  </header>
 
   <main class="main-content">
-    <img src="images/backgroundHome.jpg" alt="Dark color image with code syntax" class="background-img">
 
     <div id="welcome">
-      <div class="welcome-container">
-        <div class="letter">W</div>
-        <div class="letter">E</div>
-        <div class="letter">L</div>
-        <div class="letter">C</div>
-        <div class="letter">O</div>
-        <div class="letter">M</div>
-        <div class="letter">E</div>
+
+      <header class="my-header header-white">
+        <p class="logo-name"><span class="letter-style">M</span>arko <span class="letter-style">B</span>lazevic</p>
+      </header>
+      <div class="welcome-wrapper">
+
+        <img src="images/backgroundHome.jpg" alt="Dark color image with code syntax" class="welcome-background-img">
+        <div class="letter-container">
+          <div class="letter">W</div>
+          <div class="letter">E</div>
+          <div class="letter">L</div>
+          <div class="letter">C</div>
+          <div class="letter">O</div>
+          <div class="letter">M</div>
+          <div class="letter">E</div>
+        </div>
       </div>
-      <p class="scroll">&#x2B9F;</p>
     </div>
 
     <div id="about">
       <!-- <p> <span class="emphasize">I love</span> working with <span class="underline">everything</span> regarding
-            <strong>WWW</strong>!
-          </p> -->
+              <strong>WWW</strong>!
+            </p> -->
       <!-- <img src=""> -->
       <p class="about-paragraph">Hi!<br>As you already know my name. I will continue from there.<br>
         I am a Front End Developer who is enjoying making internet stuff that can help people reach their life and
@@ -55,46 +60,46 @@
 
     <div id="work">
       <div class="typewriter">
-        <h1 class="work"><span class="letter-style">S</span>ome Of My <span class="letter-style">W</span>ork
+        <h1><span class="letter-style">S</span>ome Of My <span class="letter-style">W</span>ork
         </h1>
       </div>
 
 
       <div class="work-container">
-        <div class="box">
-          <div class="product__img">
-            <img src="https://i.ibb.co/xSK7fcJ/oculus.png" alt="">
-          </div>
-
-          <div class="product__video">
-            <div class="video">
-              <i class="fas fa-play"></i>
-              <p>watch a review</p>
+        <!-- <div class="box">
+            <div class="product__img">
+              <img src="https://i.ibb.co/xSK7fcJ/oculus.png" alt="">
             </div>
-          </div>
 
-          <div class="product__disc">
-            <div class="product__disc--content">
-              <div class="disc__content--about">
-                <h2>Oculus Rift S</h2>
-                <span>get ready to step into a new world</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur hic minus nihil
-                  obcaecati, ratione repellendus saepe sint tenetur totam ullam. Accusantium aspernatur
-                  ducimus impedit perferendis quisquam repellendus similique ullam vitae!</p>
-              </div>
-
-              <div class="product__view--more">
-                <p>view all specifications</p>
-                <div class="view__more--block"></div>
+            <div class="product__video">
+              <div class="video">
+                <i class="fas fa-play"></i>
+                <p>watch a review</p>
               </div>
             </div>
-          </div>
 
-          <div class="product_buttons">
-            <button class="btn demo">Demo</button>
-            <button class="btn git">Github</button>
-          </div>
-        </div>
+            <div class="product__disc">
+              <div class="product__disc--content">
+                <div class="disc__content--about">
+                  <h2>Oculus Rift S</h2>
+                  <span>get ready to step into a new world</span>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur hic minus nihil
+                    obcaecati, ratione repellendus saepe sint tenetur totam ullam. Accusantium aspernatur
+                    ducimus impedit perferendis quisquam repellendus similique ullam vitae!</p>
+                </div>
+
+                <div class="product__view--more">
+                  <p>view all specifications</p>
+                  <div class="view__more--block"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="product_buttons">
+              <button class="btn demo">Demo</button>
+              <button class="btn git">Github</button>
+            </div>
+          </div> -->
       </div>
     </div>
 
@@ -116,7 +121,10 @@
     </div>
 
   </main>
+
   <footer id="footer">Copyright &#xA9; 2020, Marko Blazevic</footer>
+
+
 </body>
 
 </html>
