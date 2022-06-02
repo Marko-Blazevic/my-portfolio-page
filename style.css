@@ -385,12 +385,6 @@ button:hover {
   }
 } */
 @media (max-width: 1000px) {
-  #my-header {
-    position: relative;
-  }
-  #welcome {
-    height: 80vh;
-  }
   .letter-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -399,9 +393,6 @@ button:hover {
     font-size: 8vh;
     width: auto;
     padding: 1rem 2rem;
-  }
-  .scroll {
-    display: none;
   }
   .contact-container {
     -webkit-box-orient: vertical;

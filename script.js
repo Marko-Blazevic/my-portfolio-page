@@ -70,5 +70,8 @@ setTimeout(() => {
   welcomeContainer.classList.add('letter-container-after');
   header.classList.add('header-black');
 }, 3000);
+setTimeout(() => {
+  header.classList.add('header-black');
+}, 2000);
 
 gsap.to('.my-header', { duration: 2, ease: 'bounce.out', y: 0, opacity: 1 });

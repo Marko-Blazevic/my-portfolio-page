@@ -504,12 +504,12 @@ button {
 // }
 
 @media (max-width: 1000px) {
-  #my-header {
-    position: relative;
-  }
-  #welcome {
-    height: 80vh;
-  }
+  // #my-header {
+  //   position: relative;
+  // }
+  // #welcome {
+  //   height: 80vh;
+  // }
   .letter-container {
     flex-direction: column;
     font-size: 8vh;
@@ -517,9 +517,9 @@ button {
     padding: 1rem 2rem;
   }
 
-  .scroll {
-    display: none;
-  }
+  // .scroll {
+  //   display: none;
+  // }
 
   .contact-container {
     flex-direction: column;
