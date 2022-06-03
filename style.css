@@ -32,16 +32,88 @@ body {
           align-items: center;
 }
 
-#about {
+#welcome .welcome-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+  height: 100vh;
+}
+
+#welcome .letter-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  letter-spacing: 0.5rem;
+  font-family: "Poiret One", cursive;
+  font-size: 13vw;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px black;
+}
+
+#welcome .welcome-background-img {
+  background-image: url("images/backgroundHome.jpg");
+  background-repeat: no-repeat;
+  z-index: -1;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+#about {
   background-color: black;
   color: white;
   padding: 2rem;
+}
+
+#about .about-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3rem;
+  border-right: solid 1px #ffc400;
+  border-bottom: solid 1px #ffc400;
+}
+
+#about .about-wrapper .my-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+}
+
+#about .about-wrapper .about-paragraph {
+  margin-left: 2rem;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+#about .about-wrapper .about-paragraph .emphasize {
+  color: #ffc400;
+  font-size: 2rem;
 }
 
 #work {
@@ -67,7 +139,7 @@ body {
 
 .my-header {
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   font-family: "Poiret One", cursive;
   opacity: 0;
   -webkit-transform: translateY(100%);
@@ -75,23 +147,15 @@ body {
   font-weight: bold;
 }
 
-.welcome-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 2rem;
-  height: 100vh;
-}
-
-.logo-name {
+.my-header .logo-name {
   font-size: 1.5rem;
   text-align: center;
+}
+
+.my-header .name-letter-accent {
+  color: #ffc400;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px black;
 }
 
 .letter-style {
@@ -113,38 +177,6 @@ body {
   transition: all 2s ease-in-out;
 }
 
-.welcome-background-img {
-  background-repeat: no-repeat;
-  z-index: -1;
-  position: fixed;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  min-width: 100vw;
-  min-height: 100vh;
-}
-
-.letter-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  letter-spacing: 0.5rem;
-  font-family: "Poiret One", cursive;
-  font-size: 13vw;
-  font-weight: 500;
-  text-shadow: 1px 1px 3px black;
-}
-
 .letter-container-after {
   width: 100%;
   padding: 2rem 5rem;
@@ -162,36 +194,11 @@ body {
           transform: translateX(100%);
 }
 
-.scroll {
-  font-size: 1rem;
-  font-weight: normal;
-  border: none;
-  position: fixed;
-  -webkit-transform: translateY(-70rem);
-          transform: translateY(-70rem);
-}
-
 .underline {
   border-bottom: #ffc400 3px solid;
   border-radius: 50%;
   padding: 5px;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-}
-
-.emphasize {
-  color: #ffc400;
-  font-size: 3rem;
-  font-weight: bolder;
-  font-family: "Poiret One", cursive;
-}
-
-.about-paragraph {
-  padding: 3rem;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 300;
-  font-size: 1.5rem;
-  border-right: solid 1px #ffc400;
-  border-bottom: solid 1px #ffc400;
 }
 
 .contact-container {
@@ -358,42 +365,7 @@ button:hover {
   color: black;
 }
 
-/* @-o-keyframes slideInFromTop {
-  0% {
-    transform: translateY(-70rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@-moz-keyframes slideInFromTop {
-  0% {
-    transform: translateY(-70rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes slideInFromTop {
-  0% {
-    transform: translateY(-70rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-} */
 @media (max-width: 1000px) {
-  .letter-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    font-size: 8vh;
-    width: auto;
-    padding: 1rem 2rem;
-  }
   .contact-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -406,6 +378,18 @@ button:hover {
   }
   .contact-2 {
     width: 80%;
+  }
+}
+
+@media (max-width: 650px) {
+  .letter-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 8vh;
+    width: auto;
+    padding: 1rem 2rem;
   }
 }
 
