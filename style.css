@@ -52,17 +52,13 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  letter-spacing: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: "Poiret One", cursive;
   font-size: 13vw;
   font-weight: 500;
@@ -320,11 +316,12 @@ main {
 
 .letter-container-after {
   width: 100%;
-  padding: 2rem 5rem;
+  text-shadow: none;
+  padding: 2rem;
   color: white;
   background-color: rgba(0, 0, 0, 0.85);
-  -webkit-box-shadow: 0 0 5px #ffc400;
-          box-shadow: 0 0 5px #ffc400;
+  -webkit-box-shadow: 0 0 8px #ffc400;
+          box-shadow: 0 0 8px #ffc400;
   -webkit-transition: all ease-in-out 1.5s;
   transition: all ease-in-out 1.5s;
 }
