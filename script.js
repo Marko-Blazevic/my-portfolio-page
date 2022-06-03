@@ -45,22 +45,36 @@ gsap.from('.my-picture', {
 gsap.from('.about-paragraph', {
   scrollTrigger: '.about-paragraph',
   y: 100,
-  opacity: 0,
+  opacity: 0.2,
   duration: 2,
 });
 
-gsap.fromTo(
-  '#cursor',
-  { autoAlpha: 0, x: -20 },
-  { autoAlpha: 1, duration: 0.5, repeat: -1, ease: SteppedEase.config(1) }
-);
+// gsap.from('.contact-text', {
+//   scrollTrigger: '.contact-container',
+//   duration: 1.5,
+//   scale: 0.2,
+// });
 
-let tween = gsap.to('.typewriter', {
-  text: {
-    value:
-      'this is a custom text written to show my easy approaches to make the typewriting easy!',
-  },
-  duration: 5,
-  delay: 1,
-  ease: 'none',
+gsap.from('.pop-up', {
+  scrollTrigger: '.pop-up',
+  duration: 2.5,
+  scale: 0,
+  opacity: 0.2,
+  ease: Bounce.easeOut,
 });
+
+// gsap.fromTo(
+//   '#cursor',
+//   { autoAlpha: 0, x: -20 },
+//   { autoAlpha: 1, duration: 0.5, repeat: -1, ease: SteppedEase.config(1) }
+// );
+
+// let tween = gsap.to('.typewriter', {
+//   text: {
+//     value:
+//       'this is a custom text written to show my easy approaches to make the typewriting easy!',
+//   },
+//   duration: 5,
+//   delay: 1,
+//   ease: 'none',
+// });
