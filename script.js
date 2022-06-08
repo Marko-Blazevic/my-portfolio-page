@@ -4,9 +4,11 @@ const welcomeContainer = document.querySelector('.letter-container');
 gsap.to('.my-header', { duration: 2, ease: 'bounce.out', y: 0, opacity: 1 });
 
 const welcomeLetters = gsap.utils.toArray('.letter');
-var tl = gsap.timeline();
+
+let tl = gsap.timeline();
+
 welcomeLetters.forEach((elem) => {
-  tl.to(elem, { duration: 1.2, x: 0, opacity: 1 }, '<0.2');
+  tl.to(elem, { duration: 1, x: 0, opacity: 1 }, '<0.2');
 });
 welcomeLetters.forEach((elem) => {
   tl.to(elem, { color: 'white', duration: 0.15 });
@@ -14,12 +16,8 @@ welcomeLetters.forEach((elem) => {
 
 tl.to(
   '.welcome-background-img',
-  {
-    duration: 1,
-    opacity: 1,
-    ease: 'none',
-  },
-  '-=0.5'
+  { duration: 1, opacity: 1, ease: 'none' },
+  '-=1.5'
 );
 
 setTimeout(() => {
@@ -43,32 +41,10 @@ gsap.from('.about-paragraph', {
   duration: 2,
 });
 
-// gsap.from('.contact-text', {
-//   scrollTrigger: '.contact-container',
-//   duration: 1.5,
-//   scale: 0.2,
-// });
-
 gsap.from('.pop-up', {
   scrollTrigger: '.pop-up',
-  duration: 2.5,
+  duration: 2,
   scale: 0,
   opacity: 0.2,
   ease: Bounce.easeOut,
 });
-
-// gsap.fromTo(
-//   '#cursor',
-//   { autoAlpha: 0, x: -20 },
-//   { autoAlpha: 1, duration: 0.5, repeat: -1, ease: SteppedEase.config(1) }
-// );
-
-// let tween = gsap.to('.typewriter', {
-//   text: {
-//     value:
-//       'this is a custom text written to show my easy approaches to make the typewriting easy!',
-//   },
-//   duration: 5,
-//   delay: 1,
-//   ease: 'none',
-// });
