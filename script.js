@@ -3,35 +3,29 @@ const welcomeContainer = document.querySelector('.letter-container');
 
 gsap.to('.my-header', { duration: 2, ease: 'bounce.out', y: 0, opacity: 1 });
 
-gsap.to('.letter-w', { duration: 1.5, x: '0', opacity: 1 });
-gsap.to('.letter-e1', { duration: 1.5, x: '0', opacity: 1, delay: 0.2 });
-gsap.to('.letter-l', { duration: 1.5, x: '0', opacity: 1, delay: 0.4 });
-gsap.to('.letter-c', { duration: 1.5, x: '0', opacity: 1, delay: 0.6 });
-gsap.to('.letter-o', { duration: 1.5, x: '0', opacity: 1, delay: 0.8 });
-gsap.to('.letter-m', { duration: 1.5, x: '0', opacity: 1, delay: 1 });
-gsap.to('.letter-e2', { duration: 1.5, x: '0', opacity: 1, delay: 1.2 });
-gsap.to('.welcome-background-img', {
-  duration: 2,
-  opacity: 1,
-  delay: 2,
-  ease: 'none',
+const welcomeLetters = gsap.utils.toArray('.letter');
+var tl = gsap.timeline();
+welcomeLetters.forEach((elem) => {
+  tl.to(elem, { duration: 1.2, x: 0, opacity: 1 }, '<0.2');
 });
-gsap.to('.letter-w', { color: 'white', delay: 2 });
-gsap.to('.letter-e1', { color: 'white', delay: 2.2 });
-gsap.to('.letter-l', { color: 'white', delay: 2.4 });
-gsap.to('.letter-c', { color: 'white', delay: 2.6 });
-gsap.to('.letter-o', { color: 'white', delay: 2.8 });
-gsap.to('.letter-m', { color: 'white', delay: 3 });
-gsap.to('.letter-e2', { color: 'white', delay: 3.2 });
+welcomeLetters.forEach((elem) => {
+  tl.to(elem, { color: 'white', duration: 0.15 });
+});
 
-setTimeout(() => {
-  header.classList.add('header-black');
-}, 2000);
+tl.to(
+  '.welcome-background-img',
+  {
+    duration: 1,
+    opacity: 1,
+    ease: 'none',
+  },
+  '-=0.5'
+);
 
 setTimeout(() => {
   welcomeContainer.classList.add('letter-container-after');
   header.classList.add('header-black');
-}, 3000);
+}, 2000);
 
 gsap.registerPlugin(ScrollTrigger);
 

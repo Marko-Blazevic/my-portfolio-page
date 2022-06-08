@@ -114,6 +114,12 @@ main {
       font-size: 2.5rem;
     }
   }
+
+  .project {
+    display: block;
+    justify-content: space-around;
+    width: 200px;
+  }
 }
 
 #contact {
@@ -266,7 +272,7 @@ main {
   width: 100%;
   text-shadow: none;
   padding: 2rem;
-  color: white;
+  // color: white;
   background-color: rgba(0, 0, 0, 0.85);
   box-shadow: 0 0 8px $golden;
   transition: all ease-in-out 1.5s;

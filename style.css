@@ -140,6 +140,13 @@ main {
   font-size: 2.5rem;
 }
 
+#work .project {
+  display: block;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 200px;
+}
+
 #contact {
   background: url(images/background-contact-3.jpg);
   padding: 2rem;
@@ -318,7 +325,6 @@ main {
   width: 100%;
   text-shadow: none;
   padding: 2rem;
-  color: white;
   background-color: rgba(0, 0, 0, 0.85);
   -webkit-box-shadow: 0 0 8px #ffc400;
           box-shadow: 0 0 8px #ffc400;
