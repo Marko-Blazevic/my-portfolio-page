@@ -1,14 +1,13 @@
 const header = document.querySelector('.my-header');
 const welcomeContainer = document.querySelector('.letter-container');
-
-gsap.to('.my-header', { duration: 2, ease: 'bounce.out', y: 0, opacity: 1 });
-
 const welcomeLetters = gsap.utils.toArray('.letter');
 
 let tl = gsap.timeline();
 
+gsap.to('.my-header', { duration: 2, ease: 'bounce.out', y: 0, opacity: 1 });
+
 welcomeLetters.forEach((elem) => {
-  tl.to(elem, { duration: 1, x: 0, opacity: 1 }, '<0.2');
+  tl.to(elem, { duration: 0.8, x: 0, opacity: 1 }, '<0.2');
 });
 welcomeLetters.forEach((elem) => {
   tl.to(elem, { color: 'white', duration: 0.15 });
@@ -34,11 +33,20 @@ gsap.from('.my-picture', {
   duration: 2,
 });
 
-gsap.from('.about-paragraph', {
-  scrollTrigger: '.about-paragraph',
-  y: 100,
-  opacity: 0.2,
-  duration: 2,
+const paragraphs = gsap.utils.toArray('.slide-up-p');
+paragraphs.forEach((para) => {
+  gsap.from(para, {
+    y: 100,
+    opacity: 0,
+    duration: 1.5,
+    scrollTrigger: para,
+  });
+});
+gsap.from('.slide-right', {
+  scrollTrigger: '.slide-right',
+  x: -100,
+  opacity: 0,
+  duration: 1.5,
 });
 
 gsap.from('.pop-up', {
@@ -47,4 +55,11 @@ gsap.from('.pop-up', {
   scale: 0,
   opacity: 0.2,
   ease: Bounce.easeOut,
+});
+
+tl.from('.pointer', {
+  duration: 1,
+  opacity: 0,
+  repeat: -1,
+  yoyo: true,
 });

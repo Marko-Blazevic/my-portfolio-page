@@ -41,9 +41,11 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 2rem;
   height: 100vh;
 }
@@ -59,6 +61,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 5rem;
   font-family: "Poiret One", cursive;
   font-size: 13vw;
   font-weight: 500;
@@ -77,6 +80,69 @@ main {
   min-height: 100vh;
 }
 
+.my-header {
+  width: 100%;
+  padding: 10px 0;
+  font-family: "Poiret One", cursive;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  font-weight: bold;
+  position: fixed;
+  z-index: 100;
+}
+
+.my-header .logo-name {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.my-header .name-letter-accent {
+  color: #ffc400;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px black;
+}
+
+.letter-style {
+  color: #ffc400;
+  text-shadow: 2px 2px 4px black;
+}
+
+.header-white {
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+.header-black {
+  background-color: black;
+  color: white;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.letter-container-after {
+  width: 100%;
+  text-shadow: none;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  -webkit-box-shadow: 0 0 8px #ffc400;
+          box-shadow: 0 0 8px #ffc400;
+  -webkit-transition: all ease-in-out 1.5s;
+  transition: all ease-in-out 1.5s;
+}
+
+.letter {
+  opacity: 0;
+  -webkit-transform: translateX(50vw);
+          transform: translateX(50vw);
+}
+
+.pointer {
+  color: white;
+  opacity: 1;
+}
+
 #about {
   background-color: black;
   color: white;
@@ -90,15 +156,26 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 2rem;
   padding: 2rem 1rem;
 }
 
-#about .about-wrapper .my-picture {
+#about .about-wrapper .image-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 66px;
+}
+
+#about .about-wrapper .image-wrapper .my-picture {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 #about .about-wrapper .about-paragraph {
@@ -280,62 +357,6 @@ main {
   font-size: 0.8rem;
   text-align: center;
   padding: 1rem 0;
-}
-
-.my-header {
-  width: 100%;
-  padding: 1rem 0;
-  font-family: "Poiret One", cursive;
-  opacity: 0;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
-  font-weight: bold;
-}
-
-.my-header .logo-name {
-  font-size: 1.5rem;
-  text-align: center;
-}
-
-.my-header .name-letter-accent {
-  color: #ffc400;
-  font-size: 3rem;
-  text-shadow: 2px 2px 4px black;
-}
-
-.letter-style {
-  color: #ffc400;
-  text-shadow: 2px 2px 4px black;
-}
-
-.header-white {
-  background-color: white;
-  color: black;
-  text-align: center;
-}
-
-.header-black {
-  background-color: black;
-  color: white;
-  -webkit-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
-}
-
-.letter-container-after {
-  width: 100%;
-  text-shadow: none;
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.85);
-  -webkit-box-shadow: 0 0 8px #ffc400;
-          box-shadow: 0 0 8px #ffc400;
-  -webkit-transition: all ease-in-out 1.5s;
-  transition: all ease-in-out 1.5s;
-}
-
-.letter {
-  opacity: 0;
-  -webkit-transform: translateX(50vw);
-          transform: translateX(50vw);
 }
 
 @-webkit-keyframes typing {
