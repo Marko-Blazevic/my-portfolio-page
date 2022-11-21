@@ -14,7 +14,7 @@ $emphasize-font: 'Poiret One', cursive;
 main {
   display: flex;
   flex-direction: column;
-  // overflow-x: hidden;
+  overflow: hidden;
 }
 
 #welcome {
@@ -57,7 +57,7 @@ main {
 //   transform: translateY(-100%);
 // }
 .my-header {
-  width: 100%;
+  width: 100vw;
   padding: 10px 0;
   font-family: $emphasize-font;
   opacity: 0;
@@ -68,7 +68,6 @@ main {
   z-index: 100;
   .logo-name {
     font-size: 0;
-    // text-align: center;
     justify-content: center;
     display: flex;
     flex-direction: row;
@@ -126,19 +125,14 @@ main {
 .about-wrapper {
   display: flex;
   flex-direction: column;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 .about-img-wrapper {
-  width: 100%;
   background-color: black;
-  position: sticky;
-  top: 75px;
-  padding: 1rem;
-  z-index: 99;
-  // margin-bottom: 1rem;
+  padding: 2rem 0 1rem 0;
 }
 .about-paragraph {
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
   font-family: $text-font;
   font-weight: 300;
   font-size: 1.5rem;
@@ -200,6 +194,10 @@ main {
     margin-top: 3rem;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+  }
+  .input-box {
+    display: flex;
     flex-direction: column;
   }
   label {
@@ -272,12 +270,20 @@ main {
   }
   .about-wrapper {
     flex-direction: row;
+    padding: 2rem 5rem;
+  }
+  .about-img-wrapper {
+    padding: 0;
   }
   .my-picture {
     margin: 0 1rem;
   }
   .about-paragraph {
     padding-top: 0;
-    margin-top: 0;
+    margin: 0;
+  }
+  .contact-container {
+    display: flex;
+    flex-direction: row;
   }
 }

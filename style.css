@@ -15,6 +15,7 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: hidden;
 }
 
 #welcome {
@@ -81,7 +82,7 @@ main {
 }
 
 .my-header {
-  width: 100%;
+  width: 100vw;
   padding: 10px 0;
   font-family: "Poiret One", cursive;
   opacity: 0;
@@ -179,21 +180,16 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 .about-img-wrapper {
-  width: 100%;
   background-color: black;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 75px;
-  padding: 1rem;
-  z-index: 99;
+  padding: 2rem 0 1rem 0;
 }
 
 .about-paragraph {
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
   font-family: "Quicksand", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
@@ -277,6 +273,16 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#contact .input-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -370,13 +376,26 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    padding: 2rem 5rem;
+  }
+  .about-img-wrapper {
+    padding: 0;
   }
   .my-picture {
     margin: 0 1rem;
   }
   .about-paragraph {
     padding-top: 0;
-    margin-top: 0;
+    margin: 0;
+  }
+  .contact-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 /*# sourceMappingURL=style.css.map */
