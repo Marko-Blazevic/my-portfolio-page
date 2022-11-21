@@ -27,7 +27,7 @@ main {
 .welcome-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   padding: 2rem;
   height: 100vh;
@@ -53,9 +53,9 @@ main {
   min-width: 100vw;
   min-height: 100vh;
 }
-.un-fixed {
-  transform: translateY(-100%);
-}
+// .un-fixed {
+//   transform: translateY(-100%);
+// }
 .my-header {
   width: 100%;
   padding: 10px 0;
@@ -66,15 +66,23 @@ main {
   top: 0;
   position: fixed;
   z-index: 100;
-  transition: all 2s ease-in-out;
   .logo-name {
+    font-size: 0;
+    // text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+  .name-letter {
     font-size: 1.5rem;
-    text-align: center;
+    display: block;
+    align-self: baseline;
   }
   .name-letter-accent {
     color: $golden;
     font-size: 3rem;
     text-shadow: 2px 2px 4px black;
+    align-self: baseline;
   }
 }
 .letter-style {
@@ -107,6 +115,9 @@ main {
   color: white;
   opacity: 1;
 }
+.golden {
+  color: $golden;
+}
 
 #about {
   background-color: black;
@@ -121,10 +132,19 @@ main {
   width: 100%;
   background-color: black;
   position: sticky;
-  top: 0px;
+  top: 75px;
   padding: 1rem;
   z-index: 99;
-  margin-bottom: 0.1rem;
+  // margin-bottom: 1rem;
+}
+.about-paragraph {
+  margin: 2rem 0;
+  font-family: $text-font;
+  font-weight: 300;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-right: solid 1px $golden;
+  border-bottom: solid 1px $golden;
 }
 .my-picture {
   width: 200px;
@@ -135,15 +155,6 @@ main {
 .hi-letters {
   color: $golden;
   font-size: 2rem;
-}
-.about-paragraph {
-  margin-top: 1rem;
-  font-family: $text-font;
-  font-weight: 300;
-  font-size: 1.5rem;
-  padding: 1rem;
-  border-right: solid 1px $golden;
-  border-bottom: solid 1px $golden;
 }
 
 #work {

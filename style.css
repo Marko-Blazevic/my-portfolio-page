@@ -40,8 +40,9 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -79,11 +80,6 @@ main {
   min-height: 100vh;
 }
 
-.un-fixed {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-}
-
 .my-header {
   width: 100%;
   padding: 10px 0;
@@ -95,19 +91,35 @@ main {
   top: 0;
   position: fixed;
   z-index: 100;
-  -webkit-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
 }
 
 .my-header .logo-name {
+  font-size: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.my-header .name-letter {
   font-size: 1.5rem;
-  text-align: center;
+  display: block;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
 }
 
 .my-header .name-letter-accent {
   color: #ffc400;
   font-size: 3rem;
   text-shadow: 2px 2px 4px black;
+  -ms-flex-item-align: baseline;
+      align-self: baseline;
 }
 
 .letter-style {
@@ -150,6 +162,10 @@ main {
   opacity: 1;
 }
 
+.golden {
+  color: #ffc400;
+}
+
 #about {
   background-color: black;
   color: white;
@@ -171,10 +187,19 @@ main {
   background-color: black;
   position: -webkit-sticky;
   position: sticky;
-  top: 0px;
+  top: 75px;
   padding: 1rem;
   z-index: 99;
-  margin-bottom: 0.1rem;
+}
+
+.about-paragraph {
+  margin: 2rem 0;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-right: solid 1px #ffc400;
+  border-bottom: solid 1px #ffc400;
 }
 
 .my-picture {
@@ -187,16 +212,6 @@ main {
 .hi-letters {
   color: #ffc400;
   font-size: 2rem;
-}
-
-.about-paragraph {
-  margin-top: 1rem;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 300;
-  font-size: 1.5rem;
-  padding: 1rem;
-  border-right: solid 1px #ffc400;
-  border-bottom: solid 1px #ffc400;
 }
 
 #work {

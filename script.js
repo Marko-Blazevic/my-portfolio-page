@@ -3,17 +3,18 @@ const welcomeContainer = document.querySelector('.letter-container');
 const welcomeLetters = gsap.utils.toArray('.letter');
 const slideUp = gsap.utils.toArray('.slide-up');
 const popUp = gsap.utils.toArray('.pop-up');
+const moveLeft = gsap.utils.toArray('.move-left');
 const imageWrapper = document.querySelector('.about-img-wrapper');
 const body = document.querySelector('.main-content');
 
-body.addEventListener('scroll', console.log('it moves'));
-function toggleHeader() {
-  if (imageWrapper.offsetTop < 76) {
-    header.classList.add('un-fixed');
-  } else {
-    header.classList.remove('un-fixed');
-  }
-}
+// body.addEventListener('scroll', console.log('it moves'));
+// function toggleHeader() {
+//   if (imageWrapper.offsetTop < 76) {
+//     header.classList.add('un-fixed');
+//   } else {
+//     header.classList.remove('un-fixed');
+//   }
+// }
 
 let tl = gsap.timeline();
 
@@ -81,3 +82,40 @@ popUp.forEach((elem) => {
     ease: 'elastic.out(1, 1)',
   });
 });
+
+// const nameLetters = document.querySelectorAll('.name-letter');
+
+// nameLetters.forEach((elem) => {
+//   gsap
+//     .timeline({
+//       scrollTrigger: {
+//         trigger: '#about',
+//         scrub: 0.2,
+//         start: 'top top',
+//         end: '+=10000',
+//       },
+//     })
+//     .to(
+//       elem,
+//       {
+//         // trigger: '#about',
+//         rotation: 360 * 5,
+//         x: -100,
+//         opacity: 0,
+//         duration: 1,
+//         ease: 'none',
+//       },
+//       '-=.8'
+//     );
+// });
+// moveLeft.forEach((elem) => {
+//   tl.to(
+//     elem,
+//     {
+//       scrollTrigger: '#about',
+//       duration: 2,
+//       x: -200,
+//     },
+//     '-=1'
+//   );
+// });
