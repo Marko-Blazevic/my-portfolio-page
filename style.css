@@ -71,6 +71,7 @@ main {
 
 .welcome-background-img {
   background-image: url("images/backgroundHome.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
   position: fixed;
@@ -233,11 +234,11 @@ main {
   height: 100%;
 }
 
-#contact .letter-style {
+.letter-style {
   font-size: 2.5rem;
 }
 
-#contact .contact-container {
+.contact-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,14 +259,14 @@ main {
           box-sizing: border-box;
 }
 
-#contact .contact-1 {
+.contact-1 {
   text-align: center;
   font-family: "Quicksand", sans-serif;
   font-size: 2rem;
   font-weight: normal;
 }
 
-#contact .contact-2 {
+.contact-2 {
   margin-top: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -279,7 +280,7 @@ main {
           flex-direction: column;
 }
 
-#contact .input-box {
+.input-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -289,14 +290,14 @@ main {
           flex-direction: column;
 }
 
-#contact label {
+label {
   font-family: "Quicksand", sans-serif;
   text-shadow: 1px 0 black;
   font-size: 1.2rem;
   margin-bottom: 0.2rem;
 }
 
-#contact input {
+input {
   padding: 0 1rem;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
@@ -308,12 +309,12 @@ main {
   transition: 0.2s ease-in-out;
 }
 
-#contact input:hover {
+input:hover {
   -webkit-box-shadow: 0 0 10px orange;
           box-shadow: 0 0 10px orange;
 }
 
-#contact textarea {
+textarea {
   height: 15vh;
   padding: 0.3rem 1rem;
   border-radius: 0.5rem;
@@ -327,12 +328,12 @@ main {
   transition: 0.2s ease-in-out;
 }
 
-#contact textarea:hover {
+textarea:hover {
   -webkit-box-shadow: 0 0 10px orange;
           box-shadow: 0 0 10px orange;
 }
 
-#contact button {
+button {
   background-color: orange;
   text-shadow: 1px 0 #ca8300;
   width: 100%;
@@ -346,7 +347,7 @@ main {
   transition: all 0.2s ease-in-out;
 }
 
-#contact button:hover {
+button:hover {
   -webkit-box-shadow: 0 0 10px #ffc400;
           box-shadow: 0 0 10px #ffc400;
   -webkit-box-shadow: none;
@@ -389,13 +390,31 @@ main {
     margin: 0;
   }
   .contact-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .contact-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .contact-1 {
+    margin-right: 3rem;
+  }
+  .contact-2 {
+    margin-top: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
