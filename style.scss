@@ -122,17 +122,23 @@ main {
 #about {
   background-color: black;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 .about-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 0 2rem;
 }
 .about-img-wrapper {
   background-color: black;
   padding: 2rem 0 1rem 0;
+  align-self: flex-start;
 }
 .about-paragraph {
+  align-self: center;
+
   margin: 0 0 2rem 0;
   font-family: $text-font;
   font-weight: 300;
@@ -269,9 +275,12 @@ button {
   .letter-container {
     flex-direction: row;
   }
+}
+
+@media screen and (min-width: 600px) {
   .about-wrapper {
     flex-direction: row;
-    padding: 2rem 5rem;
+    padding: 2rem;
   }
   .about-img-wrapper {
     padding: 0;
@@ -285,12 +294,6 @@ button {
   }
   .contact-container {
     flex-direction: row;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .contact-container {
-    flex-direction: row;
     align-items: flex-start;
     justify-content: center;
   }
@@ -299,5 +302,12 @@ button {
   }
   .contact-2 {
     margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .about-wrapper {
+    width: 80%;
+    justify-content: center;
   }
 }
