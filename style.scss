@@ -18,7 +18,7 @@ main {
 }
 
 #welcome {
-  width: 100vw;
+  // width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -87,6 +87,7 @@ main {
   transition: all 2s ease-in-out;
 }
 .welcome-wrapper {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,7 +95,6 @@ main {
   // align-self: center;
   margin: auto;
   // height: calc(100vh - 56px);
-  // height: 100vh;
 }
 .letter-container {
   display: flex;
@@ -121,7 +121,7 @@ main {
 .pointer {
   color: white;
   opacity: 1;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 .golden {
   color: $golden;
@@ -287,6 +287,9 @@ button {
   .letter-container {
     flex-direction: row;
   }
+  // .welcome-wrapper {
+  //   justify-content: space-around;
+  // }
 }
 
 @media screen and (min-width: 600px) {

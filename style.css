@@ -13,7 +13,6 @@ main {
 }
 
 #welcome {
-  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -92,6 +91,7 @@ main {
 }
 
 .welcome-wrapper {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,7 +125,7 @@ main {
 .pointer {
   color: white;
   opacity: 1;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .golden {

@@ -8,6 +8,11 @@ const welcomeLetters = gsap.utils.toArray('.letter');
 const slideUp = gsap.utils.toArray('.slide-up');
 const popUp = gsap.utils.toArray('.pop-up');
 const moveLeft = gsap.utils.toArray('.move-left');
+const footer = document.querySelector('footer');
+const footerYear = footer.querySelector('span');
+
+const date = new Date().getFullYear();
+footerYear.textContent = date;
 
 // body.addEventListener('scroll', console.log('it moves'));
 // function toggleHeader() {
@@ -57,6 +62,17 @@ tl.to('.pulse', {
   repeat: -1,
   yoyo: true,
 });
+tl.to(
+  '.move',
+  {
+    duration: 2,
+    ease: 'none',
+    repeat: -1,
+    yoyo: true,
+    y: 40,
+  },
+  '-=1'
+);
 
 gsap.from('.my-picture', {
   scrollTrigger: '.my-picture',
