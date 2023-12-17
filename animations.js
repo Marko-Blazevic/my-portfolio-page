@@ -54,7 +54,7 @@ tl.to(
     ease: 'none',
     repeat: 3,
     yoyo: true,
-    y: 20,
+    y: 40,
   },
   '-=1.5'
 );

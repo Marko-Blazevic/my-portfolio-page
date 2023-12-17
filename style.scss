@@ -20,6 +20,7 @@ main {
 #welcome {
   width: 100vw;
   height: 100vh;
+  margin-top: 56px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,12 +131,12 @@ main {
 }
 
 #about {
-  background-color: black;
   color: white;
   display: flex;
   justify-content: center;
 }
 .about-wrapper {
+  background: linear-gradient(rgba(0, 0, 0, 0), black 10%);
   display: flex;
   flex-direction: column;
   justify-content: center;
