@@ -1,4 +1,4 @@
-const header = document.querySelector('.my-header');
+const myHeader = document.querySelector('.my-header');
 const welcomeContainer = document.querySelector('.letter-container');
 const imageWrapper = document.querySelector('.about-img-wrapper');
 const body = document.querySelector('.main-content');
@@ -30,7 +30,8 @@ tl.to(
 );
 setTimeout(() => {
   welcomeContainer.classList.add('letter-container-after');
-  header.classList.add('header-black');
+  myHeader.classList.add('transition2s');
+  myHeader.classList.add('header-black');
 }, 2000);
 tl.from(
   '.slide-down',
@@ -52,7 +53,7 @@ tl.to(
   {
     duration: 2,
     ease: 'none',
-    repeat: 3,
+    repeat: -1,
     yoyo: true,
     y: 40,
   },

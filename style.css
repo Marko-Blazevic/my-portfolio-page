@@ -56,6 +56,10 @@ main {
   z-index: 10;
 }
 
+.move-header {
+  top: -56px;
+}
+
 .logo-name {
   width: 100%;
   font-size: 0;
@@ -91,7 +95,14 @@ main {
 .header-black {
   background-color: rgb(0, 0, 0);
   color: white;
+}
+
+.transition2s {
   transition: all 2s ease-in-out;
+}
+
+.transition-fast {
+  transition: all 0.5s ease-in-out;
 }
 
 .welcome-wrapper {
